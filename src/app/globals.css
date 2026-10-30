@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #070709;
+  color: #f1f5f9;
+  font-family: var(--font-inter);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0c12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2233;
+  border-radius: 9999px;
+  border: 2px solid #0d0c12;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2d75;
+}
+
+/* iOS Safe Area Inset Helpers */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Glitter Twinkle Keyframes */
+@keyframes glitterTwinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(45deg);
+  }
+}
+
+.animate-glitter {
+  animation: glitterTwinkle 2.5s infinite ease-in-out;
+}
+
+/* Mobile tap highlight reset */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
